@@ -1,0 +1,32 @@
+	public List<PersonVo> personSelect(String keyword) { // Select + Search 통합
+		 // 리스트 생성
+		List<PersonVo> personList = new ArrayList<PersonVo>();
+		// db 연결
+		this.getConnect();
+		// 쿼리문 작성
+		try {
+			String query = "";
+			query += " SELECT  person_id ";
+			query += "         ,name ";
+			query += "         ,hp ";
+			query += "         ,company ";
+			query += " FROM person ";
+			
+			"" 가들어오면 위에까지만 실행
+
+			"" 외에 문자열이 들어오면
+
+			"손" 이 들어오면 바로 밑에것을 실행
+
+			"20" 이 들어오면 
+
+			// keyword에 ""가 아닌 값이 들어오면 해당 쿼리문도 붙여서 실행
+
+			if(!keyword.equals("")) {      일단 ""이 아닌 문자열이 들어오면 받고
+				여기서 정수인지 정수가 아닌지 판가름
+				정수일땐 query += " where person_id = ? "; 을 붙이고
+				정수일때는 int number = Integer.parseInt(keyword); 를 이용해서 숫자로 변환도 해준다
+				
+				정수가 아닐땐  query += " where name like ? "; 를 붙인다
+ 
+			}
